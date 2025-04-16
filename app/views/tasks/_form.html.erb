@@ -1,0 +1,26 @@
+<% if @task.errors.any? %>
+    <div class="error-messages">
+        <h2>エラーがあります：</h2>
+        <ul>
+            <% @task.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
+<%= form_with model: @task, local: true do |f|%>
+    <p>
+        <%= f.label :title, "タスク名" %><br>
+        <%= f.text_field :title %>
+    </p>
+
+    <p>
+        <%= f.label :done, "完了済み" %>
+        <%= f.check_box :done %>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
