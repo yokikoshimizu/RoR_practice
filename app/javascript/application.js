@@ -2,5 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "@rails/ujs"
+import "bootstrap"
+
 
 Rails.start()
